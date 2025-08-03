@@ -54,7 +54,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
             >
-              Yapay Zeka Destekli Reklam Çekimleri
+              Profesyonel Reklam Çekimleri
             </motion.p>
           </div>
         </motion.div>

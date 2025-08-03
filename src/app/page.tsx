@@ -1,12 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import LoadingScreen from "./components/LoadingScreen";
 import Hero from "./components/Hero";
-import Catalog from "./components/Catalog";
-import Testimonials from "./components/Testimonials";
+
 import Footer from "./components/Footer";
-import { references } from "./data/references";
 import Showroom from "./components/Showroom";
 import Pricing from "./components/Pricing";
 
@@ -68,7 +66,7 @@ export default function Home() {
               <div className="w-full h-full bg-gradient-to-b from-white/10 via-black/60 to-transparent" style={{ filter: 'blur(32px)' }} />
             </div>
             
-            <div className="relative z-40 max-w-7xl mx-auto">
+            <div id="showroom" className="relative z-40 max-w-7xl mx-auto">
               <motion.div 
                 className="text-center mb-16"
                 initial="hidden"

@@ -99,7 +99,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
         >
-          Reklamlara tonla para dökmeye son verin.
+          Markanızı Anlatan Değil, Hatırlatan Reklamlar!
         </motion.p>
         
         {/* CTA Button - Responsive sizing */}
@@ -111,7 +111,7 @@ const Hero = () => {
         >
           <Link
             href="#showroom"
-            className="inline-block px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium bg-white text-black rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+            className="inline-block px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium bg-white text-black rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-black hover:text-white active:scale-95"
           >
             Hemen keşfedin
           </Link>
@@ -130,7 +130,7 @@ const Hero = () => {
       
       {/* Minimal branding - Responsive positioning */}
       <motion.div
-        className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40"
+        className="sr-only absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}

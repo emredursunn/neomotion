@@ -5,43 +5,44 @@ import React from "react";
 
 const plans = [
   {
-    name: "30 Saniyelik Reklam Filmi",
-    price: "$299",
-    duration: "30 Saniye",
-    description: "Kısa ve etkili reklam filmleriyle markanızı öne çıkarın.",
+    name: "Profesyonel Yapay Zeka Reklam Filmi (15 - 20 Saniye)",
+    description: "Orta ölçekli ve büyümeyi hedefleyen işletmeler için marka bilinirliğini güçlendiren, yüksek prodüksiyon kalitesinde 15-20 saniyelik reklam filmleri.",
     features: [
-      "Senaryo & Yapay Zeka prodüksiyonu",
-      "HD Kalite Teslim",
-      "Telif hakkı size ait",
+      "Sinema kalitesinde görsel efektler",
+      "Uygun bütçeli ve hızlı üretim",
+      "Tamamen markanıza özel senaryo ve strateji",
+      "Senaryo, storyboard ve yapay zeka render prodüksiyon dahil",
     ],
     highlight: false,
+    price: "₺2000",
+    originalPrice: "₺3000",
+    url: "https://www.shopier.com/38140035"
   },
   {
-    name: "1 Dakikalık Reklam Filmi",
-    price: "$499",
-    duration: "1 Dakika",
-    description: "Daha fazla hikaye, daha fazla etki. En popüler tercih!",
+    name: "Profesyonel Yapay Zeka Reklam Filmi (45-90 Saniye)",
+    description: "Orta ölçekli ve büyümeyi hedefleyen işletmeler için marka bilinirliğini güçlendiren, yüksek prodüksiyon kalitesinde 45–90 saniyelik reklam filmleri.",
     features: [
-      "Senaryo & Yapay Zeka prodüksiyonu",
-      "HD/Full HD Kalite Teslim",
-      "Telif hakkı size ait",
-      "Kısa revizyon hakkı",
+      "Sinema kalitesinde görsel efektler",
+      "Uygun bütçeli ve hızlı üretim",
+      "Tamamen markanıza özel senaryo ve strateji",
+      "Senaryo, storyboard ve yapay zeka render prodüksiyon dahil",
     ],
     highlight: true,
+    price: "₺7500",
+    originalPrice: "₺8500",
+    url: "https://www.shopier.com/38139695"
   },
   {
-    name: "2 Dakikalık Reklam Filmi",
-    price: "$799",
-    duration: "2 Dakika",
-    description: "Uzun format ile markanızı derinlemesine anlatın.",
+    name: "Özel Projeler",
+    description: "Özel istekleriniz ve projeleriniz için bizimle iletişime geçin.",
     features: [
-      "Senaryo & Yapay Zeka prodüksiyonu",
-      "Full HD/4K Kalite Teslim",
-      "Telif hakkı size ait",
-      "Geniş revizyon hakkı",
-      "Özel müzik/ses opsiyonu",
+        "Size özel çözümler",
+        "Esnek süre ve formatlar",
+        "Detaylı prodüksiyon planlaması",
+        "Geniş revizyon ve destek",
     ],
     highlight: false,
+    url: "https://www.instagram.com/neomotionmedya?igsh=MXU3enJ3dWpvcXNhYg=="
   },
 ];
 
@@ -161,10 +162,10 @@ const Pricing = () => {
           {plans.map((plan, idx) => (
             <motion.div
               key={plan.name}
-              className={`relative flex flex-col items-center p-12 rounded-3xl shadow-2xl border border-amber-400/30 bg-white/10 backdrop-blur-2xl transition-all duration-300 ${
+              className={`relative flex flex-col items-center p-4 md:p-12 rounded-3xl shadow-2xl border border-amber-400/30 bg-white/10 backdrop-blur-2xl transition-all duration-300 ${
                 plan.highlight
                   ? "scale-105 border-amber-400 bg-amber-400/10 shadow-amber-400/40 ring-2 ring-amber-400"
-                  : "hover:scale-105 hover:border-amber-300/60"
+                  : "hover:border-amber-300/60"
               }`}
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: plan.highlight ? 1.05 : 1 }}
@@ -173,10 +174,6 @@ const Pricing = () => {
                 delay: 0.6 + (idx * 0.1), 
                 duration: 0.3,
                 ease: "easeOut"
-              }}
-              whileHover={{ 
-                scale: plan.highlight ? 1.08 : 1.05,
-                transition: { duration: 0.2 }
               }}
             >
               {plan.highlight && (
@@ -190,14 +187,12 @@ const Pricing = () => {
                 </motion.span>
               )}
               
-              <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg text-center">{plan.name}</h3>
-              <div className="text-lg text-amber-300 mb-2 font-semibold">{plan.duration}</div>
-              <div className="text-4xl font-extrabold text-amber-400 mb-4 drop-shadow-xl">{plan.price}</div>
-              <p className="text-white/90 mb-6 text-center text-lg font-light">{plan.description}</p>
+              <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 drop-shadow-lg text-center">{plan.name}</h3>
+              <p className="text-white/90 mb-6 md:text-center text-md md:text-lg font-light">{plan.description}</p>
               
               <ul className="mb-10 space-y-3 w-full">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="text-white/90 flex items-center gap-3 text-base">
+                  <li key={feature} className="text-white/90 flex items-center gap-3 text-sm md:text-base">
                     <span className="inline-block w-2.5 h-2.5 bg-amber-400 rounded-full" />
                     {feature}
                   </li>
@@ -205,15 +200,26 @@ const Pricing = () => {
               </ul>
               
               <motion.button
-                className={`mt-auto px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-amber-400/60 ${
+                onClick={() => window.open(plan.url, "_blank")}
+                type="button"
+                className={`mt-auto w-full px-4 py-2 md:px-10 md:py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-amber-400/60 ${
                   plan.highlight
                     ? "bg-amber-400 text-black hover:bg-amber-500"
                     : "bg-white/20 text-white hover:bg-amber-400 hover:text-black"
                 }`}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Teklif Al
+                {plan.price ? (
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm line-through text-white/70">{plan.originalPrice}</span>
+                    <span>{plan.price}</span>
+                  </div>
+                ) : plan.name === "Özel Projeler" ? (
+                  "İletişime Geç"
+                ) : (
+                  "Teklif Al"
+                )}
               </motion.button>
             </motion.div>
           ))}

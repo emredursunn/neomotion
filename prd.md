@@ -12,3 +12,7 @@ SARI KODU: #dea131
 
 hero video url 
 https://labs.google/assets/videos/flow-hero.mp4
+
+
+catalog kısmı kalkacak. o kısımda artık yaptığımız örnek çalışmalar sergilenecek. örnek çalışma sergilenme yeri sana attığım fotoğraftaki gibi olucak. tıklanan video slideı büyüyecek.
+
