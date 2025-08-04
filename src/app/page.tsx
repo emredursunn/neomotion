@@ -1,19 +1,39 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import LoadingScreen from "./components/LoadingScreen";
+// import LoadingScreen from "./components/LoadingScreen";
 import Hero from "./components/Hero";
 
 import Footer from "./components/Footer";
 import Showroom from "./components/Showroom";
 import Pricing from "./components/Pricing";
+import Header from "./components/Header";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Check if loading is already complete from localStorage
+    const loadingComplete = localStorage.getItem("loadingComplete");
+    if (loadingComplete === "true") {
+      setIsLoaded(true);
+    }else{
+      // Simulate loading delay
+      const timer = setTimeout(() => {
+        setIsLoaded(true);
+        localStorage.setItem("loadingComplete", "true");
+      }, 2000); // 2 seconds delay
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
   
-  const handleLoadingComplete = () => {
-    setLoading(false);
-  };
+  // const handleLoadingComplete = () => {
+  //   setLoading(false);
+  //   //set localStorage to loading is completed
+  //   localStorage.setItem("loadingComplete", "true");
+  // };
 
   // Showroom text animation variants
   const showroomText = "Keşfedin";
@@ -52,9 +72,10 @@ export default function Home() {
 
   return (
     <>
-      {loading && <LoadingScreen onComplete={handleLoadingComplete} />}
+      {/* {loading && !isLoaded && <LoadingScreen onComplete={handleLoadingComplete} />} */}
       <div className="min-h-screen">
         <main>
+          <Header delay={!isLoaded} fromHome={true}/>
           <Hero />
           {/* Smooth transition section */}
           <section className="relative pt-32 px-6 bg-gradient-to-b from-black via-neutral-800 via-amber-900/30 via-neutral-900 to-black overflow-hidden">
