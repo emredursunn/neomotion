@@ -12,29 +12,14 @@ const VideoStackPlayer: React.FC = () => {
   const [videos] = useState<Video[]>([
     {
       id: 1,
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-      title: "Big Buck Bunny",
+      src: "/videos/unal-tesisat-reklam.mp4",
+      title: "Ünal Tesisat Reklamı",
     },
     {
       id: 2,
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      src: "/videos/neomotion-col-reklam.mp4",
       title: "Elephants Dream",
-    },
-    {
-      id: 3,
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-      title: "For Bigger Blazes",
-    },
-    {
-      id: 4,
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      title: "For Bigger Escapes",
-    },
-    {
-      id: 5,
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      title: "For Bigger Fun",
-    },
+    }
   ]);
 
   const mainVideoRef = useRef<HTMLVideoElement>(null);

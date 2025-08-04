@@ -7,20 +7,14 @@ const exampleWorks = [
   {
     id: "work-001",
     title: "AI Ad Example 1",
-    videoUrl: "https://labs.google/assets/videos/flow-hero.mp4",
+    videoUrl: "/videos/unal-tesisat-reklam.mp4",
     thumbnail: "/models/model-1.png",
   },
   {
     id: "work-002",
     title: "AI Ad Example 2",
-    videoUrl: "https://labs.google/assets/videos/flow-hero.mp4",
+    videoUrl: "/videos/neomotion-col-reklam.mp4",
     thumbnail: "/models/model-2.png",
-  },
-  {
-    id: "work-003",
-    title: "AI Ad Example 3",
-    videoUrl: "https://labs.google/assets/videos/flow-hero.mp4",
-    thumbnail: "/models/model-3.png",
   },
   // Add more works as needed
 ];
