@@ -207,7 +207,7 @@ const Header = ({delay,fromHome}:Props) => {
               variants={linkVariants}
               className="absolute bottom-10 flex items-center space-x-3"
             >
-              <span className="text-amber-300/70 font-serif italic text-sm">AI Models for Fashion</span>
+              <span className="text-amber-300/70 font-serif italic text-sm">Yapay Zeka Reklam Çekimleri</span>
             </motion.div>
           </motion.div>
         )}
