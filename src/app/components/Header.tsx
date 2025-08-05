@@ -83,11 +83,11 @@ const Header = ({delay,fromHome}:Props) => {
             <h1 className={`text-2xl md:text-3xl font-serif font-medium text-white`}>Neomotion</h1>
           </Link>
           <nav className="hidden md:flex space-x-8">
-            <Link href="/calismalarimiz" className={`text-sm uppercase tracking-wider hover:text-amber-600 transition-colors text-white`}>
-              Çalışmalarımız
+            <Link href="/calismalarimiz" className={`text-sm tracking-wider hover:text-amber-600 transition-colors text-white`}>
+              ÇALIŞMALARIMIZ
             </Link>
-            <Link href="/biz-kimiz" className={`text-sm uppercase tracking-wider hover:text-amber-600 transition-colors text-white`}>
-              Biz Kimiz
+            <Link href="/biz-kimiz" className={`text-sm tracking-wider hover:text-amber-600 transition-colors text-white`}>
+              BİZ KİMİZ
             </Link>
             {/* <Link href="/#contact" className={`text-sm uppercase tracking-wider hover:text-amber-600 transition-colors text-white`}>
               İletişim
@@ -157,10 +157,10 @@ const Header = ({delay,fromHome}:Props) => {
               <motion.div variants={linkVariants} className="relative">
                 <Link 
                   href="/calismalarimiz" 
-                  className="text-xl text-white uppercase tracking-wider hover:text-amber-300 transition-colors py-2"
+                  className="text-xl text-white  tracking-wider hover:text-amber-300 transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
-                  Çalışmalarımız
+                  ÇALIŞMALARIMIZ
                 </Link>
                 <motion.div 
                   className="absolute -bottom-1 left-0 right-0 h-px bg-amber-300/30"
@@ -173,10 +173,10 @@ const Header = ({delay,fromHome}:Props) => {
               <motion.div variants={linkVariants} className="relative">
                 <Link 
                   href="/biz-kimiz" 
-                  className="text-xl text-white uppercase tracking-wider hover:text-amber-300 transition-colors py-2"
+                  className="text-xl text-white tracking-wider hover:text-amber-300 transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
-                  Biz Kimiz
+                  BİZ KİMİZ
                 </Link>
                 <motion.div 
                   className="absolute -bottom-1 left-0 right-0 h-px bg-amber-300/30"
@@ -189,10 +189,10 @@ const Header = ({delay,fromHome}:Props) => {
               <motion.div variants={linkVariants} className="relative">
                 <Link 
                   href="/#contact" 
-                  className="text-xl text-white uppercase tracking-wider hover:text-amber-300 transition-colors py-2"
+                  className="text-xl text-white tracking-wider hover:text-amber-300 transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
-                  İletişim
+                  İLETİŞİM
                 </Link>
                 <motion.div 
                   className="absolute -bottom-1 left-0 right-0 h-px bg-amber-300/30"
