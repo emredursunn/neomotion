@@ -5,7 +5,7 @@ import React from "react";
 
 const plans = [
   {
-    name: "Profesyonel Yapay Zeka Reklam Filmi (15 - 20 Saniye)",
+    name: "Profesyonel Yapay Zeka Reklam Filmi (15 - 30 Saniye)",
     description: "Orta ölçekli ve büyümeyi hedefleyen işletmeler için marka bilinirliğini güçlendiren, yüksek prodüksiyon kalitesinde 15-20 saniyelik reklam filmleri.",
     features: [
       "Sinema kalitesinde görsel efektler",
@@ -19,7 +19,7 @@ const plans = [
     url: "https://www.shopier.com/38140035"
   },
   {
-    name: "Profesyonel Yapay Zeka Reklam Filmi (30 - 45 Saniye)",
+    name: "Profesyonel Yapay Zeka Reklam Filmi (30 - 60 Saniye)",
     description: "Orta ölçekli ve büyümeyi hedefleyen işletmeler için marka bilinirliğini güçlendiren, yüksek prodüksiyon kalitesinde 30-45 saniyelik reklam filmleri.",
     features: [
       "Sinema kalitesinde görsel efektler",
@@ -33,7 +33,7 @@ const plans = [
     url: "https://www.shopier.com/38432896"
   },
   {
-    name: "Profesyonel Yapay Zeka Reklam Filmi (45-90 Saniye)",
+    name: "Profesyonel Yapay Zeka Reklam Filmi (60-90 Saniye)",
     description: "Orta ölçekli ve büyümeyi hedefleyen işletmeler için marka bilinirliğini güçlendiren, yüksek prodüksiyon kalitesinde 45–90 saniyelik reklam filmleri.",
     features: [
       "Sinema kalitesinde görsel efektler",
