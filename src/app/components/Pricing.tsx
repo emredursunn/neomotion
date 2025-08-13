@@ -19,6 +19,20 @@ const plans = [
     url: "https://www.shopier.com/38140035"
   },
   {
+    name: "Profesyonel Yapay Zeka Reklam Filmi (30 - 45 Saniye)",
+    description: "Orta ölçekli ve büyümeyi hedefleyen işletmeler için marka bilinirliğini güçlendiren, yüksek prodüksiyon kalitesinde 30-45 saniyelik reklam filmleri.",
+    features: [
+      "Sinema kalitesinde görsel efektler",
+      "Uygun bütçeli ve hızlı üretim",
+      "Tamamen markanıza özel senaryo ve strateji",
+      "Senaryo, storyboard ve yapay zeka render prodüksiyon dahil",
+    ],
+    highlight: true,
+    price: "₺4000",
+    originalPrice: "₺5000",
+    url: "https://www.shopier.com/38432896"
+  },
+  {
     name: "Profesyonel Yapay Zeka Reklam Filmi (45-90 Saniye)",
     description: "Orta ölçekli ve büyümeyi hedefleyen işletmeler için marka bilinirliğini güçlendiren, yüksek prodüksiyon kalitesinde 45–90 saniyelik reklam filmleri.",
     features: [
@@ -27,7 +41,7 @@ const plans = [
       "Tamamen markanıza özel senaryo ve strateji",
       "Senaryo, storyboard ve yapay zeka render prodüksiyon dahil",
     ],
-    highlight: true,
+    highlight: false,
     price: "₺7500",
     originalPrice: "₺8500",
     url: "https://www.shopier.com/38139695"
@@ -159,70 +173,113 @@ const Pricing = () => {
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
         >
-          {plans.map((plan, idx) => (
-            <motion.div
-              key={plan.name}
-              className={`relative flex flex-col items-center p-4 md:p-12 rounded-3xl shadow-2xl border border-amber-400/30 bg-white/10 backdrop-blur-2xl transition-all duration-300 ${
-                plan.highlight
-                  ? "scale-105 border-amber-400 bg-amber-400/10 shadow-amber-400/40 ring-2 ring-amber-400"
-                  : "hover:border-amber-300/60"
-              }`}
-              initial={{ opacity: 0, y: 30, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: plan.highlight ? 1.05 : 1 }}
-              viewport={{ once: true }}
-              transition={{ 
-                delay: 0.6 + (idx * 0.1), 
-                duration: 0.3,
-                ease: "easeOut"
-              }}
-            >
-              {plan.highlight && (
-                <motion.span 
-                  className="absolute -top-7  bg-amber-400 text-black text-xs font-bold px-6 py-2 rounded-full shadow-xl uppercase tracking-wider border-2 border-white/40"
-                  initial={{ opacity: 0, y: -10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + (idx * 0.1), duration: 0.3 }}
+          {plans.map((plan, idx) => {
+            if (plan.name === "Özel Projeler") {
+              return (
+                <motion.div
+                  key={plan.name}
+                  className="md:col-span-3 relative flex flex-col md:flex-row md:items-center md:justify-between p-8 md:p-12 rounded-3xl shadow-2xl border border-amber-400/30 bg-white/10 backdrop-blur-2xl transition-all duration-300 hover:border-amber-300/60"
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    delay: 0.6 + (idx * 0.1), 
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
                 >
-                  En Popüler
-                </motion.span>
-              )}
-              
-              <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 drop-shadow-lg text-center">{plan.name}</h3>
-              <p className="text-white/90 mb-6 md:text-center text-md md:text-lg font-light">{plan.description}</p>
-              
-              <ul className="mb-10 space-y-3 w-full">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="text-white/90 flex items-center gap-3 text-sm md:text-base">
-                    <span className="inline-block w-2.5 h-2.5 bg-amber-400 rounded-full" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              
-              <motion.button
-                onClick={() => window.open(plan.url, "_blank")}
-                type="button"
-                className={`mt-auto w-full px-4 py-2 md:px-10 md:py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-amber-400/60 ${
-                  plan.highlight
-                    ? "bg-amber-400 text-black hover:bg-amber-500"
-                    : "bg-white/20 text-white hover:bg-amber-400 hover:text-black"
-                }`}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {plan.price ? (
-                  <div className="flex flex-col items-center">
-                    <span className="text-sm line-through text-white/70">{plan.originalPrice}</span>
-                    <span>{plan.price}</span>
+                  <div className="flex-grow md:pr-8">
+                    <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-lg text-center md:text-left">{plan.name}</h3>
+                    <p className="text-white/90 mb-6 md:text-left text-center text-lg font-light">{plan.description}</p>
+                    <ul className="mb-8 md:mb-0 space-y-3 w-full md:columns-2">
+                      {plan.features.map((feature) => (
+                        <li key={feature} className="text-white/90 flex items-center gap-3 text-base">
+                          <span className="inline-block w-2.5 h-2.5 bg-amber-400 rounded-full" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                ) : plan.name === "Özel Projeler" ? (
-                  "İletişime Geç"
-                ) : (
-                  "Teklif Al"
+                  <div className="flex-shrink-0 mt-6 md:mt-0">
+                    <motion.button
+                      onClick={() => window.open(plan.url, "_blank")}
+                      type="button"
+                      className="w-full md:w-auto px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-amber-400/60 bg-white/20 text-white hover:bg-amber-400 hover:text-black"
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      İletişime Geç
+                    </motion.button>
+                  </div>
+                </motion.div>
+              );
+            }
+
+            return (
+              <motion.div
+                key={plan.name}
+                className={`relative flex flex-col items-center p-4 md:p-12 rounded-3xl shadow-2xl border border-amber-400/30 bg-white/10 backdrop-blur-2xl transition-all duration-300 ${
+                  plan.highlight
+                    ? "scale-105 border-amber-400 bg-amber-400/10 shadow-amber-400/40 ring-2 ring-amber-400"
+                    : "hover:border-amber-300/60"
+                }`}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: plan.highlight ? 1.05 : 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  delay: 0.6 + (idx * 0.1), 
+                  duration: 0.3,
+                  ease: "easeOut"
+                }}
+              >
+                {plan.highlight && (
+                  <motion.span 
+                    className="absolute -top-7  bg-amber-400 text-black text-xs font-bold px-6 py-2 rounded-full shadow-xl uppercase tracking-wider border-2 border-white/40"
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + (idx * 0.1), duration: 0.3 }}
+                  >
+                    En Popüler
+                  </motion.span>
                 )}
-              </motion.button>
-            </motion.div>
-          ))}
+                
+                <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 drop-shadow-lg text-center">{plan.name}</h3>
+                <p className="text-white/90 mb-6 md:text-center text-md md:text-lg font-light">{plan.description}</p>
+                
+                <ul className="mb-10 space-y-3 w-full">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="text-white/90 flex items-center gap-3 text-sm md:text-base">
+                      <span className="inline-block w-2.5 h-2.5 bg-amber-400 rounded-full" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <motion.button
+                  onClick={() => window.open(plan.url, "_blank")}
+                  type="button"
+                  className={`mt-auto w-full px-4 py-2 md:px-10 md:py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl focus:outline-none focus:ring-2 focus:ring-amber-400/60 ${
+                    plan.highlight
+                      ? "bg-amber-400 text-black hover:bg-amber-500"
+                      : "bg-white/20 text-white hover:bg-amber-400 hover:text-black"
+                  }`}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {plan.price ? (
+                    <div className="flex flex-col items-center">
+                      <span className="text-sm line-through text-white/70">{plan.originalPrice}</span>
+                      <span>{plan.price}</span>
+                    </div>
+                  ) : plan.name === "Özel Projeler" ? (
+                    "İletişime Geç"
+                  ) : (
+                    "Teklif Al"
+                  )}
+                </motion.button>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
